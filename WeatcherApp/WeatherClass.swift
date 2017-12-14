@@ -4,7 +4,7 @@
 //
 //  Created by Mateusz Matejczyk on 09.12.2017.
 //  Copyright © 2017 Mateusz Matejczyk. All rights reserved.
-//
+// test dzialania git 1
 
 import Foundation
 
