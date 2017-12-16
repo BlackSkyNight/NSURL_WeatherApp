@@ -13,7 +13,7 @@
         <!--CurrentPlaceWeather-->
         <scene sceneID="DKw-sb-wvp">
             <objects>
-                <viewController storyboardIdentifier="CurrentPlaceWeather" title="CurrentPlaceWeather" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7PY-ZJ-hQ5" customClass="ViewController" customModule="WeatcherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentPlaceWeather" title="CurrentPlaceWeather" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7PY-ZJ-hQ5" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NIi-pF-5cH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,8 +28,8 @@
         <!--Weather City Table View Controller-->
         <scene sceneID="fBb-vB-BWv">
             <objects>
-                <tableViewController id="O8q-W8-JXT" customClass="WeatherCityTableViewController" customModule="WeatcherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rF2-vy-rTN">
+                <tableViewController id="O8q-W8-JXT" customClass="WeatherCityTableViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="210" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rF2-vy-rTN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,7 +39,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="210" id="Cxw-m5-F73" customClass="WeatherTableViewCell" customModule="WeatcherApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="210" id="Cxw-m5-F73" customClass="WeatherTableViewCell" customModule="WeatherApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="210"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cxw-m5-F73" id="I7h-Nz-hVj">
@@ -57,7 +57,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="Fgq-v6-Rq0" customClass="DetailCollectionViewCell" customModule="WeatcherApp" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="Fgq-v6-Rq0" customClass="DetailCollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="1" width="150" height="197"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -115,7 +115,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="temperatura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzt-MO-lEu">
-                                            <rect key="frame" x="16" y="166" width="151" height="33"/>
+                                            <rect key="frame" x="16" y="166" width="113" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -125,6 +125,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="iconImage" destination="zSE-xv-R9k" id="Bzc-sX-5qx"/>
+                                    <outlet property="myCollectionView" destination="fG0-gK-RmB" id="KPX-vQ-hXS"/>
                                     <outlet property="nameDayLabel" destination="Cd3-AO-9Lg" id="JDK-Ek-OuU"/>
                                     <outlet property="namePlaceLabel" destination="Vof-Ag-pyM" id="Utq-V5-FpE"/>
                                     <outlet property="temperatureLabel" destination="lzt-MO-lEu" id="pSF-lW-Te0"/>
@@ -143,7 +144,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaj-O9-1sA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="-103"/>
+            <point key="canvasLocation" x="884" y="-103.89805097451276"/>
         </scene>
     </scenes>
 </document>

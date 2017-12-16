@@ -17,6 +17,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    @IBOutlet weak var myCollectionView: UICollectionView!
     
     
     override func awakeFromNib() {
@@ -28,6 +29,13 @@ class WeatherTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateCollection()
+    {
+        DispatchQueue.main.async {
+            self.myCollectionView.reloadData()
+        }
     }
 
 }

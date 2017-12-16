@@ -16,6 +16,8 @@ class WeatherCityTableViewController: UITableViewController, UISearchBarDelegate
     @IBOutlet var myTableView: UITableView!
     
     var forecastData = [Weather]()
+    var numberOfSavedCitys = 1
+    var loaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,7 @@ class WeatherCityTableViewController: UITableViewController, UISearchBarDelegate
                         if let weatherData = results
                         {
                             self.forecastData = weatherData
+                            self.loaded = true
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
@@ -67,18 +70,38 @@ class WeatherCityTableViewController: UITableViewController, UISearchBarDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return forecastData.count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WeatherTableViewCell
 
-        let weatherObject = forecastData[indexPath.row]
+        let weatherObject = forecastData.first
+        cell.nameDayLabel.text = "today"
+        cell.namePlaceLabel.text = ""
         
-        cell.namePlaceLabel.text = weatherObject.summary
-        cell.temperatureLabel.text = String(weatherObject.temperature)
-
+        if (weatherObject?.temperature != nil)
+        {
+        cell.temperatureLabel.text = "\(Int((weatherObject?.temperature)!))"
+        }
+        else
+        {
+            cell.temperatureLabel.text = "999"
+        }
+        print("\(weatherObject?.icon)")
+        
+        if loaded == true && weatherObject?.icon != nil
+        {
+            cell.iconImage?.image = UIImage(named: weatherObject!.icon)
+        }
+        else
+        {
+            
+            cell.iconImage?.image = UIImage(named: "clear_day")
+        }
+        cell.updateCollection()
+        
         return cell
     }
     
@@ -129,3 +152,62 @@ class WeatherCityTableViewController: UITableViewController, UISearchBarDelegate
     */
 
 }
+
+extension WeatherCityTableViewController: UICollectionViewDataSource, UICollectionViewDelegate
+{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! DetailCollectionViewCell
+      
+        var weatherObject = forecastData.first
+        
+        if (forecastData.count > 1)
+        {
+            weatherObject = forecastData[indexPath.row]
+        }
+        
+        if (weatherObject?.temperature != nil)
+        {
+            cell.temperatureLabel.text = "\(Int((weatherObject?.temperature)!))"
+        }
+        else
+        {
+            cell.temperatureLabel.text = "999"
+        }
+        
+        if (weatherObject?.icon != nil)
+        {
+            cell.iconImage.image = UIImage(named: (weatherObject?.icon)!)
+        }
+            
+        let date = Calendar.current.date(byAdding: .weekday, value: indexPath.row, to: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        dateFormatter.dateFormat = "EEEE"
+        cell.dateLabel.text = dateFormatter.string(from: date!)
+        
+ 
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
