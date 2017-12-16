@@ -28,7 +28,6 @@
         <!--Weather City Table View Controller-->
         <scene sceneID="fBb-vB-BWv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eaj-O9-1sA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="O8q-W8-JXT" customClass="WeatherCityTableViewController" customModule="WeatcherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rF2-vy-rTN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -142,8 +141,9 @@
                         <outlet property="searchBar" destination="wms-s7-yaQ" id="SSX-5v-aY2"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaj-O9-1sA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720.79999999999995" y="-150.67466266866569"/>
+            <point key="canvasLocation" x="884" y="-103"/>
         </scene>
     </scenes>
 </document>

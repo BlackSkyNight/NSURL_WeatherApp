@@ -7,51 +7,81 @@
 // https://www.youtube.com/watch?v=doqtsIsbtqs 9:18 collectionView in cell https://www.youtube.com/watch?v=6ZxA2pmV3VM
 
 import UIKit
+import CoreLocation
 
-class WeatherCityTableViewController: UITableViewController {
+class WeatherCityTableViewController: UITableViewController, UISearchBarDelegate {
 
     //init
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var myTableView: UITableView!
     
-    
+    var forecastData = [Weather]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let locationString = searchBar.text, !locationString.isEmpty
+        {
+            updateWeatherForLocation(location: locationString)
+        }
+    }
+    
+    func updateWeatherForLocation(location: String)
+    {
+        CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in
+            if error == nil
+            {
+                if let location = placemarks?.first?.location
+                {
+                    Weather.forecast(withLocation: location.coordinate, completion: { (results: [Weather]?) in
+                        if let weatherData = results
+                        {
+                            self.forecastData = weatherData
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return forecastData.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WeatherTableViewCell
 
-        // Configure the cell...
+        let weatherObject = forecastData[indexPath.row]
+        
+        cell.namePlaceLabel.text = weatherObject.summary
+        cell.temperatureLabel.text = String(weatherObject.temperature)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

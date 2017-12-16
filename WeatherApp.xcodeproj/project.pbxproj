@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6126D6341FDC98F300FEACF6 /* WeatcherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatcherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6126D6341FDC98F300FEACF6 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6126D6371FDC98F300FEACF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6126D6391FDC98F300FEACF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6126D63C1FDC98F300FEACF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		6126D62B1FDC98F300FEACF6 = {
 			isa = PBXGroup;
 			children = (
-				6126D6361FDC98F300FEACF6 /* WeatcherApp */,
+				6126D6361FDC98F300FEACF6 /* WeatherApp */,
 				6126D6351FDC98F300FEACF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,12 +58,12 @@
 		6126D6351FDC98F300FEACF6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6126D6341FDC98F300FEACF6 /* WeatcherApp.app */,
+				6126D6341FDC98F300FEACF6 /* WeatherApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6126D6361FDC98F300FEACF6 /* WeatcherApp */ = {
+		6126D6361FDC98F300FEACF6 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
 				6126D6371FDC98F300FEACF6 /* AppDelegate.swift */,
@@ -79,15 +79,15 @@
 				6126D63E1FDC98F300FEACF6 /* WeatcherApp.xcdatamodeld */,
 				61AEC4021FE296AF00559D05 /* weather_ICONS */,
 			);
-			path = WeatcherApp;
+			path = WeatherApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6126D6331FDC98F300FEACF6 /* WeatcherApp */ = {
+		6126D6331FDC98F300FEACF6 /* WeatherApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6126D6491FDC98F300FEACF6 /* Build configuration list for PBXNativeTarget "WeatcherApp" */;
+			buildConfigurationList = 6126D6491FDC98F300FEACF6 /* Build configuration list for PBXNativeTarget "WeatherApp" */;
 			buildPhases = (
 				6126D6301FDC98F300FEACF6 /* Sources */,
 				6126D6311FDC98F300FEACF6 /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = WeatcherApp;
+			name = WeatherApp;
 			productName = WeatcherApp;
-			productReference = 6126D6341FDC98F300FEACF6 /* WeatcherApp.app */;
+			productReference = 6126D6341FDC98F300FEACF6 /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6126D62F1FDC98F300FEACF6 /* Build configuration list for PBXProject "WeatcherApp" */;
+			buildConfigurationList = 6126D62F1FDC98F300FEACF6 /* Build configuration list for PBXProject "WeatherApp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6126D6331FDC98F300FEACF6 /* WeatcherApp */,
+				6126D6331FDC98F300FEACF6 /* WeatherApp */,
 			);
 		};
 /* End PBXProject section */
@@ -301,7 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WeatcherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.WeatcherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,7 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WeatcherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.WeatcherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6126D62F1FDC98F300FEACF6 /* Build configuration list for PBXProject "WeatcherApp" */ = {
+		6126D62F1FDC98F300FEACF6 /* Build configuration list for PBXProject "WeatherApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6126D6471FDC98F300FEACF6 /* Debug */,
@@ -334,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6126D6491FDC98F300FEACF6 /* Build configuration list for PBXNativeTarget "WeatcherApp" */ = {
+		6126D6491FDC98F300FEACF6 /* Build configuration list for PBXNativeTarget "WeatherApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6126D64A1FDC98F300FEACF6 /* Debug */,

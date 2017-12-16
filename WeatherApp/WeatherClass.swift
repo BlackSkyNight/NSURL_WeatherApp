@@ -7,6 +7,7 @@
 
 
 import Foundation
+import CoreLocation
 
 struct Weather
 {
@@ -35,9 +36,9 @@ struct Weather
     
     static let basePath = "https://api.darksky.net/forecast/f5eddea7702bd57b597af3e6991310c9/"//37.8267,-122.4233"
     
-    static func forecast (withLocation location:String, completion: @escaping ([Weather]) -> ())
+    static func forecast (withLocation location: CLLocationCoordinate2D, completion: @escaping ([Weather]) -> ())
     {
-        let url = basePath + location
+        let url = basePath + "\(location.latitude),\(location.longitude)"
         let request = URLRequest(url: URL(string: url)!)
         
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
